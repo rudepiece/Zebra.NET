@@ -1,4 +1,4 @@
-# investec C# API Wrapper (.NET 8)
+# Investec C# API Wrapper (.NET 8)
 
 This client library enables client applications to connect to Investec's Open Banking APIs, refer to [Investec OpenAPI Documentation](https://developer.investec.com/programmable-banking/#open-api/).
 

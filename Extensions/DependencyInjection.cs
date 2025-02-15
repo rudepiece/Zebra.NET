@@ -1,6 +1,6 @@
-﻿using investec.Models;
-using investec.Services;
+﻿using Zebra.NET.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Zebra.NET.Models;
 
 namespace Zebra.NET.Extensions;
 public static class DependencyInjection

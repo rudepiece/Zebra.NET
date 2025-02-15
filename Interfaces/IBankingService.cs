@@ -1,4 +1,4 @@
-namespace investec.Interfaces;
+namespace Zebra.NET.Interfaces;
 
 public interface IBankingService
 {

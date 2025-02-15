@@ -1,11 +1,11 @@
 ﻿using System.Text.Json;  
 using System.Threading.Tasks;
-using investec.Interfaces;
+using Zebra.NET.Interfaces;
 using RestSharp;  
 using RestSharp.Authenticators;  
-using investec.Models;  
+using Zebra.NET.Models;  
   
-namespace investec.Services  
+namespace Zebra.NET.Services  
 {  
     public class BankingService : IBankingService
     {  

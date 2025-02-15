@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using RestSharp;
 using RestSharp.Authenticators;
 
-namespace investec.Models;
+namespace Zebra.NET.Models;
 
 public class Authenticator : IAuthenticator
 {

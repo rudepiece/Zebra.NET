@@ -1,4 +1,4 @@
-﻿namespace investec;
+﻿namespace Zebra.NET;
 
 public class AccountsResponse
 {

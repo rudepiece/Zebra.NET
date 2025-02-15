@@ -99,11 +99,11 @@ public class BankingController : ControllerBase
 
 ## Install via [Nuget.org](https://www.nuget.org/)
 
-`Install-Package investec.OpenBanking`
+`Install-Package Zebra.Net`
 
-| NuGet Stable | NuGet Pre-release | Downloads |
-| ------------ | ----------------- | --------- |
-| [![investec.OpenBanking](https://img.shields.io/nuget/v/investec.OpenBanking.svg)](https://www.nuget.org/packages/investec.OpenBanking/) | [![investec.OpenBanking](https://img.shields.io/nuget/vpre/investec.OpenBanking.svg)](https://www.nuget.org/packages/investec.OpenBanking/) | [![investec.OpenBanking](https://img.shields.io/nuget/dt/investec.OpenBanking.svg)](https://www.nuget.org/packages/investec.OpenBanking/) |
+| NuGet Stable                                                                                                                  | NuGet Pre-release | Downloads |
+|-------------------------------------------------------------------------------------------------------------------------------| ----------------- | --------- |
+| [![Zebra.Net](https://img.shields.io/nuget/v/Zebra.Net.svg)](https://www.nuget.org/packages/Zebra.Net/) | [![Zebra.Net](https://img.shields.io/nuget/vpre/Zebra.Net.svg)](https://www.nuget.org/packages/Zebra.Net/) | [![Zebra.Net](https://img.shields.io/nuget/dt/Zebra.Net.svg)](https://www.nuget.org/packages/Zebra.Net/) |
 
 ## Useful Links
 

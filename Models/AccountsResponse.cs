@@ -9,7 +9,7 @@ public class AccountsResponse
 
 public class Data
 {
-    public Accounts[] accounts { get; set; }
+    public List<Accounts> accounts { get; set; }
 }
 
 public class Accounts
@@ -36,106 +36,125 @@ public class Meta
 
 public class Account
 {
-    public string AccountId { get; set; }
-    public string AccountNumber { get; set; }
-    public string AccountName { get; set; }
-    public string ReferenceName { get; set; }
-    public string ProductName { get; set; }
-    public bool KycCompliant { get; set; }
-    public string ProfileId { get; set; }
+    public string accountId { get; set; }
+    public string accountNumber { get; set; }
+    public string accountName { get; set; }
+    public string referenceName { get; set; }
+    public string productName { get; set; }
+    public bool kycCompliant { get; set; }
+    public string profileId { get; set; }
 }
 
 public class AccountBalanceResponse
 {
-    public AccountBalance Data { get; set; }
+    public AccountData data { get; set; }
+    public Links links { get; set; }
+    public Meta meta { get; set; }
 }
 
-public class AccountBalance
+public class AccountData
 {
-    public string AccountId { get; set; }
-    public decimal CurrentBalance { get; set; }
-    public decimal AvailableBalance { get; set; }
-    public string Currency { get; set; }
-    public string? AccountName { get; set; }
+    public string accountId { get; set; }
+    public decimal currentBalance { get; set; }
+    public decimal availableBalance { get; set; }
+    public decimal budgetBalance { get; set; }
+    public decimal straightBalance { get; set; }
+    public decimal cashBalance { get; set; }
+    public string currency { get; set; }
 }
 
 public class AccountTransactionsResponse
 {
-    public List<Transaction> Transactions { get; set; }
+    public List<Transaction> transactions { get; set; }
 }
 
 public class Transaction
 {
-    public string AccountId { get; set; }
-    public string Type { get; set; }
-    public string TransactionType { get; set; }
-    public string Status { get; set; }
-    public string Description { get; set; }
-    public string CardNumber { get; set; }
-    public int PostedOrder { get; set; }
-    public string PostingDate { get; set; }
-    public string ValueDate { get; set; }
-    public string ActionDate { get; set; }
-    public string TransactionDate { get; set; }
-    public decimal Amount { get; set; }
-    public decimal RunningBalance { get; set; }
+    public string accountId { get; set; }
+    public string type { get; set; }
+    public string transactionType { get; set; }
+    public string status { get; set; }
+    public string description { get; set; }
+    public string cardNumber { get; set; }
+    public int postedOrder { get; set; }
+    public string postingDate { get; set; }
+    public string valueDate { get; set; }
+    public string actionDate { get; set; }
+    public string transactionDate { get; set; }
+    public decimal amount { get; set; }
+    public decimal runningBalance { get; set; }
 }
 
 public class TransferRequest
 {
-    public List<Transfer> TransferList { get; set; }
+    public string accountId { get; set; }
+    public List<Transfer> transferList { get; set; }
 }
 
 public class Transfer
 {
-    public string BeneficiaryAccountId { get; set; }
-    public decimal Amount { get; set; }
-    public string MyReference { get; set; }
-    public string TheirReference { get; set; }
+    public string beneficiaryAccountId { get; set; }
+    public decimal amount { get; set; }
+    public string myReference { get; set; }
+    public string theirReference { get; set; }
 }
 
 public class TransferResponse
 {
-    // Define properties based on the response  
+    public TransferResponseData data { get; set; }
+    public Links Links { get; set; }
+    public Meta Meta { get; set; }
+}
+
+public class TransferResponseData
+{
+    public List<TransferResult> TransferResponses { get; set; }
+    public string ErrorMessage { get; set; }
+}
+
+public class TransferResult
+{
+    public string PaymentReferenceNumber { get; set; }
+    public string PaymentDate { get; set; }
+    public string Status { get; set; }
+    public string BeneficiaryName { get; set; }
+    public string BeneficiaryAccountId { get; set; }
+    public bool AuthorisationRequired { get; set; }
 }
 
 public class BeneficiariesResponse
 {
-    public List<Beneficiary> Beneficiaries { get; set; }
+    public List<Beneficiary> beneficiaries { get; set; }
 }
 
 public class Beneficiary
 {
-    public string BeneficiaryId { get; set; }
-
-    public string Name { get; set; }
-    // Add other properties as needed  
+    public string beneficiaryId { get; set; }
+    public string name { get; set; }
 }
 
 public class BeneficiaryCategoriesResponse
 {
-    public List<BeneficiaryCategory> Categories { get; set; }
+    public List<BeneficiaryCategory> categories { get; set; }
 }
 
 public class BeneficiaryCategory
 {
-    public string CategoryId { get; set; }
-
-    public string Name { get; set; }
-    // Add other properties as needed  
+    public string categoryId { get; set; }
+    public string name { get; set; }
 }
 
 public class BeneficiaryPaymentRequest
 {
-    public List<Payment> PaymentList { get; set; }
+    public List<Payment> paymentList { get; set; }
 }
 
 public class Payment
 {
-    public string BeneficiaryId { get; set; }
-    public decimal Amount { get; set; }
-    public string MyReference { get; set; }
-    public string TheirReference { get; set; }
+    public string beneficiaryId { get; set; }
+    public decimal amount { get; set; }
+    public string myReference { get; set; }
+    public string theirReference { get; set; }
 }
 
 public class BeneficiaryPaymentResponse
@@ -145,16 +164,14 @@ public class BeneficiaryPaymentResponse
 
 public class DocumentsResponse
 {
-    public List<Document> Documents { get; set; }
+    public List<Document> documents { get; set; }
 }
 
 public class Document
 {
-    public string DocumentId { get; set; }
-    public string Type { get; set; }
-
-    public string Date { get; set; }
-    // Add other properties as needed  
+    public string documentId { get; set; }
+    public string type { get; set; }
+    public string date { get; set; }
 }
 
 public class DocumentResponse

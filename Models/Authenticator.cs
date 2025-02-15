@@ -27,6 +27,16 @@ public class Authenticator : IAuthenticator
         BaseUrl = sandbox ? Constants.SandboxUrl : Constants.BaseUrl;
         GetAccessToken(_clientId, _clientSecret);
     }
+    
+    public Authenticator(IConfiguration config, bool sandbox)
+    {
+        _clientId = config[Constants.ClientIdSection] ?? Environment.GetEnvironmentVariable(Constants.ClientIdSection);
+        _clientSecret = config[Constants.ClientSecretSection] ?? Environment.GetEnvironmentVariable(Constants.ClientSecretSection);
+        ApiKey = config[Constants.ApiKeySection] ?? Environment.GetEnvironmentVariable(Constants.ApiKeySection);
+        BaseUrl = sandbox ? Constants.SandboxUrl : Constants.BaseUrl;
+        GetAccessToken(_clientId, _clientSecret);
+    }
+
 
 
     private void GetAccessToken(string clientId, string clientSecret)

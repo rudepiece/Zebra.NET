@@ -54,9 +54,9 @@ namespace Zebra.NET.Services
             return JsonSerializer.Deserialize<AccountTransactionsResponse>(response.Content);  
         }  
   
-        public async Task<TransferResponse> TransferMultiple(string accountId, TransferRequest transferRequest)  
+        public async Task<TransferResponse> TransferMultiple(TransferRequest transferRequest)  
         {  
-            var request = new RestRequest($"za/pb/v1/accounts/{accountId}/transfermultiple", Method.Post);  
+            var request = new RestRequest($"za/pb/v1/accounts/{transferRequest.accountId}/transfermultiple", Method.Post);  
             request.AddJsonBody(transferRequest);  
             var response = await _client.ExecuteAsync(request);  
             return JsonSerializer.Deserialize<TransferResponse>(response.Content);  

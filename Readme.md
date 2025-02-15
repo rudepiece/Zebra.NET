@@ -30,8 +30,9 @@ public class Startup
         // Add other services
 
         // Configure Investec Open Banking client service
-        services.AddInvestecOpenBanking(new Authenticator(Configuration, "YourClientId", "YourClientSecret", "YourApiKey"));
-
+       builder.Services.AddInvestecOpenBanking(
+            new Authenticator(builder.Configuration, false, "YourClientId", "YourClientSecret", "YourApiKey"));
+        
         // Add other services
     }
 
